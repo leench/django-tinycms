@@ -1,0 +1,3 @@
+PUBLISH_DEFAULT = True
+DRAFT_DEFAULT   = False
+

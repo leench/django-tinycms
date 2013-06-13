@@ -40,3 +40,5 @@ nosetests.xml
 # project
 testcms/
 manage.py
+
+*.swp
