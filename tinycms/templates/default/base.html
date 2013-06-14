@@ -1,0 +1,15 @@
+{% load staticfiles %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="keywords" content="{% block keywords %}{% endblock %}" />
+	<meta name="description" content="{% block description %}{% endblock %}" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %}{% endblock %} - 贵州广播电视台直属机关党委</title>
+	{% block statics %}{% endblock %}
+	{% block js %}{% endblock %}
+</head>
+
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>

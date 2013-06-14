@@ -1,0 +1,18 @@
+/* Site rules */
+body {
+   background: #000 url('somebg.gif');
+   font-size: 14px;
+}
+
+/* TinyMCE specific rules */
+body.mceContentBody {
+   background: #FFF;
+}
+
+.mceContentBody a {
+   color: red !important; /* FF requires a important here */
+}
+
+.header1 {
+	font-size: 20px;
+}

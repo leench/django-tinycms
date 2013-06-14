@@ -17,6 +17,7 @@ class Category(MPTTModel):
     active          = models.BooleanField(_("active"), default=True)
     order           = models.IntegerField(_("order"), default=50)
     description     = models.TextField(_("description"), blank=True, null=True)
+    marker          = models.CharField(_("marker"), max_length=100, blank=True)
     template        = models.CharField(_('category template'), max_length=255, blank=True, default="")
     meta_keywords   = models.CharField(_("keywords"), blank=True, default="", max_length=255, help_text=_("Comma-separated keywords for search engines."))
     meta_extra      = models.TextField(_("extra"), blank=True, default="", help_text=_("(Advanced) Any additional HTML to be placed verbatim in the &lt;head&gt;"))

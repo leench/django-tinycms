@@ -1,0 +1,162 @@
+<div id="swfupload">
+	<h2 style="margin-bottom:15px;">上传图片：</h2>
+
+	<div class="fieldset flash" id="fsUploadProgress">
+	<span class="legend">上传列队</span>
+	</div>
+	<input id="btnInner" class="btnInner" type="button" value="插入到文章" onclick="InnerImg();" disabled="disabled" style="margin-left: 2px; font-size: 12px; height: 29px;" />
+	<div id="thumbnails" class="clearfix"></div>
+	<input id="btnInner1" class="btnInner" type="button" value="插入到文章" onclick="InnerImg();" disabled="disabled" style="margin-left: 2px; font-size: 12px; height: 29px;" />
+	<div id="divStatus">0 个文件已上传</div>
+	<div style="margin-top:5px;">
+	<span id="spanButtonPlaceHolder"></span>
+	<input id="btnCancel" type="button" value="取消所有上传" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 12px; height: 29px;" />
+	<input id="clearInner" type="button" value="清除图片" onclick="clearInner();" style="margin-left: 2px; font-size: 12px; height: 29px;" />
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/js/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/static/js/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="/static/js/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/static/js/swfupload/handlers.js"></script>
+<script type="text/javascript">
+function clearInner() {
+	$('#thumbnails').html('');
+}
+
+function addImage(src) {
+	var imgDiv = document.createElement("div");
+	imgDiv.setAttribute("class", "thumbimg");
+
+	var newImg = document.createElement("img");
+	newImg.style.margin = "5px";
+	newImg.style.height = "100px";
+
+	imgDiv.appendChild(newImg);
+	document.getElementById("thumbnails").appendChild(imgDiv);
+	if (newImg.filters) {
+		try {
+			newImg.filters.item("DXImageTransform.Microsoft.Alpha").opacity = 0;
+		} catch (e) {
+			// If it is not set initially, the browser will throw an error.  This will set it if it is not set yet.
+			newImg.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + 0 + ')';
+		}
+	} else {
+		newImg.style.opacity = 0;
+	}
+
+	newImg.onload = function () {
+		fadeIn(newImg, 0);
+	};
+	newImg.src = src;
+}
+
+function fadeIn(element, opacity) {
+	var reduceOpacityBy = 5;
+	var rate = 30;	// 15 fps
+
+
+	if (opacity < 100) {
+		opacity += reduceOpacityBy;
+		if (opacity > 100) {
+			opacity = 100;
+		}
+
+		if (element.filters) {
+			try {
+				element.filters.item("DXImageTransform.Microsoft.Alpha").opacity = opacity;
+			} catch (e) {
+				// If it is not set initially, the browser will throw an error.  This will set it if it is not set yet.
+				element.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + opacity + ')';
+			}
+		} else {
+			element.style.opacity = opacity / 100;
+		}
+	}
+
+	if (opacity < 100) {
+		setTimeout(function () {
+			fadeIn(element, opacity);
+		}, rate);
+	}
+}
+
+function muploadSuccess(file, serverData) {
+	try {
+		addImage(serverData);
+		var progress = new FileProgress(file, this.customSettings.progressTarget);
+		progress.setComplete();
+		progress.setStatus("上传成功.");
+		progress.toggleCancel(false);
+		document.getElementById("btnInner").disabled = false;
+		document.getElementById("btnInner1").disabled = false;
+
+	} catch (ex) {
+		this.debug(ex);
+	}
+}
+
+ function InnerImg() {
+	//var Editor = window.parent.CKEDITOR;
+	//Editor.instances.id_content.insertHtml("<span style=\"color:red\">xxxx</span>");//this works! From http://cksource.com/forums/viewtopic.php?t=15555
+
+	var imgdate = "";
+
+	var imglist = document.getElementById('thumbnails').getElementsByTagName('img')
+	for (var i = 0; i < imglist.length; i++) {
+		imgdate += "<img src=\"" + imglist[i].src + "\" />\n"
+	}
+
+	//$('textarea#id_content').tinymce().execCommand('mceInsertContent',false,imgdate);
+	tinymce.execCommand('mceInsertContent',false,imgdate);
+
+	//Editor.instances.id_content.insertHtml(imgdate);//this works! From http://cksource.com/forums/viewtopic.php?t=15555
+	var Colorbox = window.parent.$(".lightbox");
+	Colorbox.colorbox.close();
+ }
+
+var swfu;
+
+var settings = {
+	flash_url : "/static/js/swfupload/swfupload.swf",
+	upload_url: "/upload/",
+	post_params: {
+		"sessionid" : "{{ session_id }}",
+		"csrfmiddlewaretoken": "{{ csrf_token }}",
+		"type": "images",
+	},
+	file_size_limit : "100 MB",
+	file_types : "*.jpg;*.gif;*.png",
+	file_types_description : "All Files",
+	file_upload_limit : 100,
+	file_queue_limit : 0,
+	custom_settings : {
+		progressTarget : "fsUploadProgress",
+		cancelButtonId : "btnCancel"
+	},
+	debug: false,
+
+	// Button settings
+	button_image_url: "/static/js/swfupload/TestImageNoText_65x29.png",
+	button_width: "65",
+	button_height: "29",
+	button_placeholder_id: "spanButtonPlaceHolder",
+	button_text: '<span class="theFont">上传</span>',
+	button_text_style: ".theFont { font-size: 15px; }",
+	button_text_left_padding: 12,
+	button_text_top_padding: 4,
+
+	// The event handler functions are defined in handlers.js
+	file_queued_handler : fileQueued,
+	file_queue_error_handler : fileQueueError,
+	file_dialog_complete_handler : fileDialogComplete,
+	upload_start_handler : uploadStart,
+	upload_progress_handler : uploadProgress,
+	upload_error_handler : uploadError,
+	upload_success_handler : muploadSuccess,
+	upload_complete_handler : uploadComplete,
+	queue_complete_handler : queueComplete	// Queue plugin event
+};
+
+swfu = new SWFUpload(settings);
+</script>

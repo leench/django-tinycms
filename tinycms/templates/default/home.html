@@ -1,0 +1,531 @@
+{% extends "default/base.html" %}
+
+{% load staticfiles %}
+{% block title %}首页{% endblock %}
+{% block statics %}
+<link href="{% static "styles/main.css" %}" rel="stylesheet" type="text/css"/>
+<script language="javascript1.1" type="text/javascript" src="{% static "js/jquery-1.8.3.min.js" %}"></script>
+<script language="javascript1.1" type="text/javascript" src="{% static "js/floatPic.js" %}"></script>
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+$(document).ready(function() {
+	jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+		$(tab_conbox).find("ul").hide();
+		$(tabtit).find("li:first").addClass("on").show(); 
+		$(tab_conbox).find("ul:first").show();
+	
+		$(tabtit).find("li").bind(shijian,function(){
+		  $(this).addClass("on").siblings("li").removeClass("on"); 
+			var activeindex = $(tabtit).find("li").index(this);
+			$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+			return false;
+		});
+	
+	};
+	/*调用方法如下：*/
+	$.jqtab(".tabs",".tab_conbox","click");
+	
+	//$.jqtab("#tabs2","#tab_conbox2","mouseenter");
+	
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="header">
+	<div class="width">
+		<div class="banner">
+			
+		</div>
+		<div class="nav width">
+			<ul>
+				<li><a class="on" href="/">首页</a></li>
+				<li><a href="#">党委办/机关党委</a></li>
+				<li><a href="#">基层组织建设</a></li>
+				<li><a href="#">群团工作</a></li>
+				<li><a href="#">创先争优</a></li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="foot_bg">
+	<div class="width">
+		<div class="main">
+			<script type="text/javascript">
+				$(function(){
+					//定义参数
+					var $loopPic = $('#hotnew');//div
+					var $ul = $('#hotnew ul');//ul
+					var $li = $('#hotnew ul li');//li
+					var $time = 0;//设置setInterval()的返回值
+					var $maxLength = parseInt( $li.length ) * parseInt( $li.outerWidth() );//所有图片的总高
+			
+					//克隆
+					$ul.append($li.slice(0).clone());
+					//$ul.append($li.slice(0).clone());
+			
+					//自动播放
+					auto();
+			
+					//自动播放方法
+					function auto(){   
+						//定义滚动
+						$time = setInterval(showImg,30);
+					};
+			
+					function showImg (){
+						//设置位移
+						var $le = parseInt($ul.css("left"));
+						$le > -$maxLength ? $le-- : $le = 0;
+						$ul.css({left:$le+"px"});
+					};
+			
+					//鼠标悬浮时停止，移开时继续滚动
+					$loopPic.hover(
+						function(){
+							clearInterval($time);
+						},
+						function(){
+							auto();
+						}
+					);
+				});
+			  </script>
+			<div class="hotnews">
+				<div class="left">
+					<strong>新闻公告</strong>
+					<div id="hotnew">
+						<ul>
+							
+                            <li><a href="#" >赛程赛制</a></li>
+							
+                            <li><a href="#" >歌手大赛通知（报名延至5月5日）</a></li>
+							
+                            <li><a href="#" >政工报名通知</a></li>
+							
+                            <li><a href="#" >省直机关优秀党员志愿者推荐表</a></li>
+
+                            <li><a href="#" >歌手大赛赛程赛制</a></li>
+							
+                            <li><a href="#" >歌手大赛通知（报名延至5月5日）</a></li>
+							
+                            <li><a href="#" >政工报名通知</a></li>
+							
+                            <li><a href="#" >刘恩副主任进社区听民意解民忧</a></li>
+							
+                            <li><a href="#" >市委副书记戴北方到市直机关工委调研</a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<form id="searchform" name="searchform" method="get" action=" http://61.144.227.212/was5/web/search" accept-charset="utf-8" onsubmit="return checkSearch('searchkeyword');" target="_blank">
+					<em class="png spr_bg icon_so"></em><strong>站内搜索：</strong><input name="channelid" id="channelid" type="hidden" value="248361"/>
+        <input type="hidden" name="orderby" value="RELEVANCE"/>
+        <input type="hidden" name="perpage" value=""/>
+        <input name="searchword" type="text" id="searchkeyword" class="ipText" value="搜索关键字" onfocus="textBox.cd(this,1)" onblur="textBox.rd(this)" title="站内搜索" style=""/>
+					<input name="image" id="searchbutton" src="/static/images/search.jpg" type="image" align=middle value="搜&nbsp;&nbsp;索"/>
+				</form>
+			</div>
+			<div class="mt1 foucs">
+				<div class="left flash">
+				
+					<SPAN id=focuspic><DIV id=NewsPic>
+					<a href="#" title="中央国家机关工委来深调研 肯定深圳机关党建工作成绩(一)" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="中央国家机关工委来深调研 肯定深圳机关党建工作成绩(二)" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="中央国家机关工委来深调研 肯定深圳机关党建工作成绩(三)" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="中央国家机关工委来深调研 肯定深圳机关党建工作成绩(四)" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="中央国家机关工委来深调研 肯定深圳机关党建工作成绩(五)" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="创新奖评审现场" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="刘恩副主任进社区听民意解民忧" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="11月20日下午，市直机关工委召开全体党员干部会议，认真学习贯彻党的十八大精神" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="10月9日全市机关作风建设现场会在宝安召开" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="市直机关工委、市作风办在市博物馆举行首届机关文化节“火红年代-—书画摄影大赛”获奖作品展。" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="深圳市首届机关文化节开幕式文艺晚会现场" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="公务员志愿者以志愿服务实际行动迎接党的生日" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a><a href="#" title="全市机关党的建设工作会议隆重召开" target="_blank"><img src="./images/nopic.jpg" width="340" height="257"/></a></DIV>
+					<DIV id=NewsPicTxt></DIV></SPAN>
+					<SCRIPT language=javascript>init();</SCRIPT>
+				</div>
+				<div class="left pd1 layout1">
+					<ul class="title tabs">
+						<li class="a_first on"><a href="#">台内快讯</a></li>
+						<li><a class="a_first off"  href="#">领导讲话</a></li>
+					</ul>
+					<div class="con list1 tab_conbox">
+						<ul class="tab_con">
+						
+							<li><span >2013-05-20</span><a href="#" >中央国家机关工委来深调研 肯定深圳机关党建工作成绩</a></li>
+					    
+							<li><span >2013-04-28</span><a href="#" >市直机关工委牵头组织明察暗访推动作风转变</a></li>
+					    
+							<li><span >2013-04-28</span><a href="#" >市直机关工委举办学习讨论活动创新奖评选</a></li>
+					    
+							<li><span >2013-04-28</span><a href="#" >市直机关开展赈灾捐款活动</a></li>
+					    
+							<li><span >2013-04-28</span><a href="#" >市直机关工委代表团第六组市党代表畅谈改革创新</a></li>
+					    
+							<li><span >2013-04-28</span><a href="#" >市直机关纪工委组织系统纪检干部培训</a></li>
+					    
+							<li><span >2013-03-14</span><a href="#" >刘恩副主任进社区听民意解民忧</a></li>
+					    
+							<li><span >2013-03-07</span><a href="#" >市委副书记戴北方到市直机关工委调研</a></li>
+					    
+							
+					    
+						</ul>						
+						<ul class="tab_con">
+						
+							<li><span>2013-04-28</span><a href="#" >大鹏新区组织人事局开展五项活动推进机关作风建设</a></li>
+					    
+							<li><span>2013-04-28</span><a href="#" >深圳广电集团厉行节约树新风</a></li>
+					    
+							<li><span>2013-03-07</span><a href="#" >学习贯彻十八大  抓好改革促发展</a></li>
+					    
+							<li><span>2013-03-07</span><a href="#" >华侨城集团全方位贯彻落实中央八项规定</a></li>
+					    
+							<li><span>2013-03-07</span><a href="#" >远洋运输公司认真抓好春节期间廉洁节约工作</a></li>
+					    
+							<li><span>2013-02-17</span><a href="#" >宣传文化系统大力开展党的十八大精神学习宣传工作</a></li>
+					    
+							<li><span>2013-02-17</span><a href="#" >蛇口工业区紧密结合实际学习贯彻党的十八大精神</a></li>
+					    
+							<li><span>2013-02-17</span><a href="#" >大鹏新区南澳街道“四扶”工程显成效</a></li>
+					    
+					    
+						</ul>
+					</div>
+				</div>
+				
+			      <script type="text/javascript">
+						$(function(){
+							//定义参数
+							var $loopPic = $('#loopLink');//div
+							var $ul = $('#loopLink ul');//ul
+							var $li = $('#loopLink ul li');//li
+							var $time = 0;//设置setInterval()的返回值
+							var $maxLength = parseInt( $li.length ) * parseInt( $li.outerHeight() );//所有图片的总高
+					
+							//克隆
+							$ul.append($li.slice(0).clone());
+							$ul.append($li.slice(0).clone());//由于图片太少时，所以需再执行一次这句
+					
+							//自动播放
+							auto();
+					
+							//自动播放方法
+							function auto(){   
+								//定义滚动
+								$time = setInterval(showImg,30);
+							};
+					
+							function showImg (){
+								//设置位移
+								var $le = parseInt($ul.css("top"));
+								$le > -$maxLength ? $le-- : $le = 0;
+								$ul.css({top:$le+"px"});
+							};
+					
+							//鼠标悬浮时停止，移开时继续滚动
+							$loopPic.hover(
+								function(){
+									clearInterval($time);
+								},
+								function(){
+									auto();
+								}
+							);
+						});
+					  </script>
+					  
+				<div class="right layout1 layout2">
+					<h3 class="title">通知公告<a href="#" class="more">更多</a></h3>
+					<div class="con list1" id="loopLink">
+						<ul>
+							
+							<li><a href="#" >关于做好第四届广东省道德模范评选网络投票和学习...</a></li>
+					    
+							<li><a href="#" >推荐表彰通知深直工通【2013.】10号</a></li>
+					    
+							<li><a href="#" >市直机关志愿行动先进党支部推荐表</a></li>
+					    
+							<li><a href="#" >市直机关优秀党员志愿者推荐表</a></li>
+					    
+							<li><a href="#" >“深圳好人”推荐表</a></li>
+					    
+							<li><a href="#" >歌手大赛赛程赛制</a></li>
+					    
+							<li><a href="#" >歌手大赛通知（报名延至5月5日）</a></li>
+					    
+						</ul>
+					</div>
+				</div>
+				
+
+			</div>
+			<div class="wd mt1">
+				<div class="left layout1">
+					<h3 class="title"><strong>条例法规</strong><a href="#" class="more">更多</a></h3>
+					<ul class="con list1">
+						<li class="li_height">
+							
+							<div class="top">							
+								<a href="#" class="a_top"><img src="./images/nopic.jpg" width="115" height="97"/></a>
+								<div class="demo">
+									<h4><a href="#" >关于印发《关于进一步做好发...</a></h4>
+									<p>　　现将《关于进一步做好发展党员工作的若干意见》（简称《意见》）印发给你们，请结合各自实际，认真贯彻执行。</p>
+								</div>
+							</div>
+						</li>
+						
+							<li><span >2013-02-20</span><a href="#" >中国共产党章程</a></li>
+					    
+							<li><span >2012-12-25</span><a href="#" >中国共产党纪律处分条例（上）</a></li>
+					    
+							<li><span >2012-12-25</span><a href="#" >中国共产党纪律处分条例（中）</a></li>
+					    
+							<li><span >2012-12-25</span><a href="#" >中国共产党纪律处分条例（下）</a></li>
+					    
+							<li><span >2012-12-25</span><a href="#" >《中国共产党党内监督条例（试行）》全文</a></li>
+					    
+					</ul>
+				</div>
+				<div class="left pd1 layout1">
+					<h3 class="title"><strong>组织建设</strong><a href="#" class="more">更多</a></h3>
+					<ul class="con list1">
+						<li class="li_height">
+							
+							<div class="top">							
+								<a href="#" class="a_top"><img src="./images/nopic.jpg" width="115" height="97"/></a>
+								<div class="demo">
+									<h4><a href="#" >市直机关工委召开“百日攻坚...</a></h4>
+									<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯彻落实市委组织部“两新”组织党组织覆盖“百日攻坚行动”会议精神，市直机关工委于5月17日召开了系统内“两新”组织党组织覆盖“百日攻坚行动”工作会议，重点对系统内各单位主管的社会组织党组织建设工作进行动员和部署，参加会议的有市直机关工委系统各有关单位党组织负责同志共计50多人。</p>
+								</div>
+							</div>
+						</li>
+						
+							<li><span>2012-12-24</span><a href="#" >送人玫瑰  手有余香——市气象局公务员志愿行动小记</a></li>
+					    
+							<li><span>2012-12-24</span><a href="#" >中交二航局深圳分公司组织新提任干部廉政宣誓</a></li>
+					    
+							<li><span>2012-12-24</span><a href="#" >财政部驻深办多举措加强监督确保干部资金安全</a></li>
+					    
+							<li><span>2012-05-30</span><a href="#" >大鹏新区组工干部广泛开展党性标准讨论活动</a></li>
+					    
+							<li><span>2012-05-30</span><a href="#" >市检察院认真组织开展党支部分类定级工作</a></li>
+					    
+					</ul>
+				</div>
+				<div class="right layout1 layout2">
+					<h3 class="title">走前头 做表率<a href="#" class="more">更多</a></h3>
+					<div class="con listr">
+						<ul>
+							<li class="li_height">
+								
+								<div class="top">							
+									<a href="#" class="a_top"><img src="./images/nopic.jpg" width="80" height="57"/></a>
+									<div class="demo">
+										<h4><a href="#" >关于印发《关于进一步做好发...</a></h4>
+										<p>　　现将《关于进一步做好发展党员工作的若干意见》（简称《意见》）印发给你们，请结合各自实际，认真贯彻执行。</p>
+									</div>
+								</div>
+							</li>
+						
+							<li><a href="#" >关于做好第四届广东省道德模范评选网络投票和学习...</a></li>
+					    
+							<li><a href="#" >推荐表彰通知深直工通【2013.】10号</a></li>
+					    
+							<li><a href="#" >市直机关志愿行动先进党支部推荐表</a></li>
+					    
+							<li><a href="#" >市直机关优秀党员志愿者推荐表</a></li>
+					    
+							<li><a href="#" >“深圳好人”推荐表</a></li>
+							
+							<li><a href="#" >“深圳好人”推荐表</a></li>
+
+					    
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="wd mt1">
+<!--				
+				<div class="logofor2">
+					<ul>
+				  <li><img src="./images/nopic.jpg" width="150" height="40"/></li>
+				  <li><img src="./images/nopic.jpg" width="150" height="40"/></li>
+				  <li><img src="./images/nopic.jpg" width="150" height="40"/></li>
+				  <li><img src="./images/nopic.jpg" width="150" height="40"/></li>
+				  </ul>
+				</div>
+-->
+				<div class="left layout1">
+					<h3 class="title"><strong>群团工作</strong><a href="#" class="more">更多</a></h3>
+					<ul class="con list1">
+						<li class="li_height">
+							
+							<div class="top">							
+								<a href="#" class="a_top"><img src="./images/nopic.jpg" width="115" height="97"/></a>
+								<div class="demo">
+									<h4><a href="#" >中国青年报：只要能坚持，公...</a></h4>
+									<p>　　5月15日，深圳市25家市直机关的公务员走上街头，开展50余项形式多样的便民利民志愿服务，同时对深圳市直机关的志愿服务项目进行展示。</p>
+								</div>
+							</div>
+						</li>
+						
+							<li><span>2013-02-20</span><a href="#" >深直团通〔2013〕1号关于开展35学雷锋志愿活动的通知</a></li>
+					    
+							<li><span>2012-12-25</span><a href="#" >中国青年报：公务员街头擦鞋记</a></li>
+					    
+							<li><span>2012-12-25</span><a href="#" >团中央关于进一步加强驻外团组织建设的有关意见</a></li>
+					    
+							<li><span>2012-12-25</span><a href="#" >关于加强新形势下基层党建带团建工作的意见</a></li>
+					    
+							<li><span>2012-05-30</span><a href="#" >市直机关团员青年在“党员天地”庆祝团的生日</a></li>
+					    
+					</ul>
+				</div>
+				
+				<div class="left pd1 layout1">	
+					<h3 class="title"><strong>创先争优</strong><a href="#" class="more">更多</a></h3>
+					<ul class="con list1">
+						<li class="li_height">
+							
+							<div class="top">							
+								<a href="#" class="a_top"><img src="./images/nopic.jpg" width="115" height="97"/></a>
+								<div class="demo">
+									<h4><a href="#" >深圳市直机关妇女代表联系制...</a></h4>
+									<p>　　第一条 为进一步拓宽机关妇女工作渠道，扩大妇女工作覆盖面，切实发挥妇女代表联系妇女，宣传妇女，代表妇女，服务妇女的作用，根据《深圳市妇女代表大会代表联系制度（试行）》制定本实施办法。
+</p>
+								</div>
+							</div>
+						</li>
+						
+							<li><span>2012-12-25</span><a href="#" >深圳市“巾帼文明示范岗”管理办法</a></li>
+					    
+							<li><span>2012-12-25</span><a href="#" >中华人民共和国妇女权益保障法</a></li>
+					    
+							<li><span>2012-12-25</span><a href="#" >深圳经济特区实施《中华人民共和国妇女权益保障法...</a></li>
+					    
+							<li><span>2012-12-25</span><a href="#" >转发市妇联《关于做好“南粤巾帼十杰”及省“三八...</a></li>
+					    
+							<li><span>2012-12-25</span><a href="#" >转发市妇联《关于申报省级“巾帼文明岗”的通知》...</a></li>
+					    
+					</ul>
+				</div>
+				<div class="right layout3">
+					<div class="right layout1 layout2 investigate">
+						<h3 class="title">交流互动</h3>
+						<div class="con">
+							<h3 class="hdzt">活动主题名称</h3>
+							<div class="hdjj">活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介活动内容简介</div>
+							<div class="hdcy"><a href="#" >参与活动</a></div>
+</div>
+					</div>
+
+					<div class="right function">
+					<ul>
+            <!--<li><a href="#" class="spr_bg dy_ts"></a></li>-->
+						<li><a href="mailto:zzb@gzstv.com" class="spr_bg dy_mail"></a></li>
+						<li><a href="#" class="spr_bg dy_home"></a></li>
+						<li><a href="#" class="spr_bg dy_lmj"></a></li>
+					</ul>
+				</div>
+				</div>
+			</div>
+			<div class="wd mt1">
+				<div class="left topic">
+					<div class="left spr_bg">
+						<a href="#">图<br />片<br />新<br />闻</a>
+					</div>
+					<script type="text/javascript">
+					$(function(){
+						//定义参数
+						var $loopPic = $('#loopPic');//div
+						var $ul = $('#loopPic ul');//ul
+						var $li = $('#loopPic ul li');//li
+						var $time = 0;//设置setInterval()的返回值
+						var $maxLength = parseInt( $li.length ) * parseInt( $li.outerWidth() );//所有图片的总高
+				
+						//克隆
+						$ul.append($li.slice(0).clone());
+						//$ul.append($li.slice(0).clone());
+				
+						//自动播放
+						auto();
+				
+						//自动播放方法
+						function auto(){   
+							//定义滚动
+							$time = setInterval(showImg,30);
+						};
+				
+						function showImg (){
+							//设置位移
+							var $le = parseInt($ul.css("left"));
+							$le > -$maxLength ? $le-- : $le = 0;
+							$ul.css({left:$le+"px"});
+						};
+				
+						//鼠标悬浮时停止，移开时继续滚动
+						$loopPic.hover(
+							function(){
+								clearInterval($time);
+							},
+							function(){
+								auto();
+							}
+						);
+					});
+				  </script>
+					<div class="demo" id="loopPic">
+						<ul>
+
+					     <li>
+					      <a href="#" target="_blank"><img src="./images/nopic.jpg" width="185" height="129"/></a>
+					      <h4><a href="#" title="情出于蓝">情出于蓝</a></h4>
+					     </li>
+
+					     <li>
+					      <a href="#" target="_blank"><img src="./images/nopic.jpg" width="185" height="129"/></a>
+					      <h4><a href="#" title="弘扬大运会精神(1)">弘扬大运会精神(1)</a></h4>
+					     </li>
+
+					     <li>
+					      <a href="#" target="_blank"><img src="./images/nopic.jpg" width="185" height="129"/></a>
+					      <h4><a href="#" title="弘扬大运会精神(2)">弘扬大运会精神(2)</a></h4>
+					     </li>
+
+					     <li>
+					      <a href="#" target="_blank"><img src="./images/nopic.jpg" width="185" height="129"/></a>
+					      <h4><a href="#" title="弘扬大运会精神(3)">弘扬大运会精神(3)</a></h4>
+					     </li>
+
+						</ul>
+					</div>
+				</div>
+			
+			</div>
+			<div class="wd mt1 link">
+				<div class="title">
+					<h3>相关链接</h3>
+				</div>
+				<div class="a_link">
+					<ul>
+						<li><a href="#" target="_blank" title="贵州省直机关党建网">贵州省直机关党建网</a></li>
+						<li><a href="http://www.qlong.com.cn" target="_blank" title="黔龙网">黔龙网</a></li>
+						<li><a href="#" target="_blank" title="中国共产党网">中国共产党网</a></li>
+						<li><a href="#" target="_blank" title="人民网">人民网</a></li>
+						<li><a href="#" target="_blank" title="统战部">统战部</a></li>
+						<li><a href="#" target="_blank" title="求是">求是</a></li>
+						<li><a href="#" target="_blank" title="中国总工会">中国总工会</a></li>
+						<li><a href="#" target="_blank" title="中国共青团">中国共青团</a></li>
+						<li><a href="#" target="_blank" title="中国文明网">中国文明网</a></li>
+												
+</ul>
+				</div>
+			</div>
+		</div>
+		<div class="wd foot">
+		<p>
+		Copyright © 2003-2011 GZSTV.COM,All Rights Reserved.<br>
+		版权所有：贵州广播电视台&nbsp;&nbsp;&nbsp;&nbsp;西石网络&nbsp;&nbsp;&nbsp;&nbsp;独家技术支持<br>
+		贵州省通信管理局备案：黔ICP备07000443号&nbsp;&nbsp;&nbsp;&nbsp;信息网络传播视听节目许可证号：2410521
+    </p>
+		</div>
+	</div>
+</div>
+{% endblock %}
