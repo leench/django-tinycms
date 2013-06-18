@@ -43,6 +43,7 @@ jgdw/
 meida/
 static/
 templates/
+water/
 manage.py
 
 *.swp
