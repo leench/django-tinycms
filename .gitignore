@@ -40,6 +40,10 @@ nosetests.xml
 # project
 testcms/
 jgdw/
+meida/
+static/
+templates/
 manage.py
 
 *.swp
+uwsgi.ini

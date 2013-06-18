@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-13 16:38+0800\n"
+"POT-Creation-Date: 2013-06-18 15:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: admin.py:22
+#: admin.py:28
 msgid "absolute url"
 msgstr "链接"
 
-#: models.py:14 models.py:51 models.py:64
+#: admin.py:45
+msgid "category(include children)"
+msgstr "栏目(包括子栏目)"
+
+#: admin.py:81
+#, python-format
+msgid "<a href=\"%s\" target=\"_blank\">preview</a>"
+msgstr "<a href=\"%s\" target=\"_blank\">预览</a>"
+
+#: admin.py:83
+msgid "preview"
+msgstr "预览"
+
+#: admin.py:89
+msgid "not published"
+msgstr "未发布"
+
+#: admin.py:91
+msgid "true url"
+msgstr "真实链接"
+
+#: admin.py:95
+msgid "True"
+msgstr ""
+
+#: admin.py:97
+msgid "False"
+msgstr ""
+
+#: admin.py:98
+msgid "thumb"
+msgstr "缩略图"
+
+#: admin.py:103 models.py:62
+msgid "symbols"
+msgstr "标记"
+
+#: admin.py:133 models.py:92
+msgid "publish"
+msgstr "发布"
+
+#: admin.py:138
+msgid "unpublish"
+msgstr "未发布"
+
+#: admin.py:172
+msgid "Select category that you want change."
+msgstr "选择你要更改的栏目。"
+
+#: admin.py:190
+msgid "change category"
+msgstr "更改栏目"
+
+#: admin.py:216
+msgid "Select symbol(s) that you want add."
+msgstr "选择你要添加的标记。"
+
+#: admin.py:229
+msgid "add symbol"
+msgstr "添加标记"
+
+#: admin.py:255
+msgid "Select symbol(s) that you want delete."
+msgstr "选择你要删除的标记。"
+
+#: admin.py:268
+msgid "delete symbol"
+msgstr "移除标记"
+
+#: admin.py:297 admin.py:341 models.py:23 models.py:100
+msgid "extra"
+msgstr "额外"
+
+#: models.py:14 models.py:52 models.py:65
 msgid "name"
 msgstr "名称"
 
-#: models.py:15 models.py:83
+#: models.py:15 models.py:84
 msgid "slug"
 msgstr "Slug"
 
@@ -36,7 +109,7 @@ msgstr "链接"
 
 #: models.py:16
 msgid "An URL to use instead of the one derived from the category hierarchy."
-msgstr ""
+msgstr "栏目链接"
 
 #: models.py:17
 msgid "active"
@@ -46,204 +119,241 @@ msgstr "有效"
 msgid "order"
 msgstr "排序"
 
-#: models.py:19 models.py:53 models.py:66 models.py:89
+#: models.py:19 models.py:54 models.py:67 models.py:90
 msgid "description"
 msgstr "描述"
 
 #: models.py:20
+msgid "marker"
+msgstr "标记"
+
+#: models.py:21
 msgid "category template"
 msgstr "栏目模板"
 
-#: models.py:21 models.py:98
+#: models.py:22 models.py:99
 msgid "keywords"
 msgstr "关键字"
 
-#: models.py:21 models.py:98
+#: models.py:22 models.py:99
 msgid "Comma-separated keywords for search engines."
 msgstr "搜索引擎用的关键字"
 
-#: models.py:22 models.py:99
-msgid "extra"
-msgstr "额外"
-
-#: models.py:22 models.py:99
+#: models.py:23 models.py:100
 msgid ""
 "(Advanced) Any additional HTML to be placed verbatim in the &lt;head&gt;"
 msgstr ""
 
-#: models.py:23 models.py:93
+#: models.py:24 models.py:94
 msgid "create date"
 msgstr "创建时间"
 
-#: models.py:42
+#: models.py:43
 msgid "This slug already exist in this level."
-msgstr ""
+msgstr "本层存在相同的slug"
 
-#: models.py:45 models.py:84
+#: models.py:46 models.py:85
 msgid "category"
 msgstr "栏目"
 
-#: models.py:46
+#: models.py:47
 msgid "categories"
 msgstr "栏目"
 
-#: models.py:48
+#: models.py:49
 msgid "Categories"
 msgstr "栏目"
 
-#: models.py:52 models.py:60 models.py:90
+#: models.py:53 models.py:61 models.py:91
 msgid "symbol"
 msgstr "标记"
 
-#: models.py:54
+#: models.py:55
 msgid "is default"
 msgstr "默认"
 
-#: models.py:61
-msgid "symbols"
-msgstr "标记"
-
-#: models.py:65 models.py:72 models.py:79
+#: models.py:66 models.py:73 models.py:80
 msgid "title class"
 msgstr "标题类"
 
-#: models.py:73
+#: models.py:74
 msgid "title classes"
 msgstr "标题类"
 
-#: models.py:76
+#: models.py:77
 msgid "author"
 msgstr "作者"
 
-#: models.py:77
+#: models.py:78
 msgid "modified by"
 msgstr "修改者"
 
-#: models.py:78 models.py:168
+#: models.py:79 models.py:169
 msgid "title"
 msgstr "标题"
 
-#: models.py:80
+#: models.py:81
 msgid "alternate title"
 msgstr "备用标题"
 
-#: models.py:81
+#: models.py:82
 msgid "jump"
 msgstr "跳转"
 
-#: models.py:82
+#: models.py:83
 msgid "jump to url"
 msgstr "跳转到"
 
-#: models.py:83
+#: models.py:84
 msgid "default is the id of entry."
 msgstr ""
 
-#: models.py:85
+#: models.py:86
 msgid "sub_category"
 msgstr "副栏目"
 
-#: models.py:86
+#: models.py:87
 msgid "source"
 msgstr "来源"
 
-#: models.py:87
+#: models.py:88
 msgid "thumbnail"
 msgstr "缩略图"
 
-#: models.py:88
+#: models.py:89
 msgid "alternate_thumbnail"
 msgstr "备用缩略图"
 
-#: models.py:91
-msgid "publish"
-msgstr "发布"
-
-#: models.py:92
+#: models.py:93
 msgid "publisher"
 msgstr "发布者"
 
-#: models.py:94
+#: models.py:95
 msgid "publish date"
 msgstr "发布时间"
 
-#: models.py:95
+#: models.py:96
 msgid "modification time"
 msgstr "修改时间"
 
-#: models.py:96
+#: models.py:97
 msgid "allow comment"
 msgstr "允许评论"
 
-#: models.py:97
+#: models.py:98
 msgid "is draft"
 msgstr "草稿"
 
-#: models.py:100
+#: models.py:101
 msgid "entry template"
 msgstr "文档模板"
 
-#: models.py:134
+#: models.py:135
 msgid "Can publish entry"
 msgstr "能够发布文档"
 
-#: models.py:135
+#: models.py:136
 msgid "Can view all entries"
 msgstr "能够查看所有文档"
 
-#: models.py:142
+#: models.py:143
 msgid "content"
 msgstr "内容"
 
-#: models.py:145
+#: models.py:146
 msgid "article"
 msgstr "文章"
 
-#: models.py:146
+#: models.py:147
 msgid "articles"
 msgstr "文章"
 
-#: models.py:149
+#: models.py:150
 msgid "video url"
 msgstr "视频地址"
 
-#: models.py:152
+#: models.py:153
 msgid "video"
 msgstr "视频"
 
-#: models.py:153
+#: models.py:154
 msgid "videos"
 msgstr "视频"
 
-#: models.py:156
+#: models.py:157
 msgid "entry"
 msgstr "文档"
 
-#: models.py:157
+#: models.py:158
 msgid "entry hit times"
 msgstr "文档点击次数"
 
-#: models.py:158
+#: models.py:159
 msgid "last hit time"
 msgstr "最后点击时间"
 
-#: models.py:161
+#: models.py:162
 #, python-format
 msgid "%s times"
 msgstr "%s 次"
 
-#: models.py:164
+#: models.py:165
 msgid "hit times"
 msgstr "点击次数"
 
-#: models.py:169
+#: models.py:170
 msgid "uploader"
 msgstr "上传者"
 
-#: models.py:170
+#: models.py:171
 msgid "image"
 msgstr "图片"
 
-#: models.py:171
+#: models.py:172
 msgid "upload date"
 msgstr "上传时间"
+
+#: views.py:122
+msgid "prev"
+msgstr ""
+
+#: views.py:130
+msgid "next"
+msgstr ""
+
+#: utils/dashboard.py:29
+#, fuzzy
+msgid "Add Article"
+msgstr "文章"
+
+#: utils/dashboard.py:30
+msgid "Add file"
+msgstr ""
+
+#: utils/dashboard.py:31
+msgid "Return to site"
+msgstr ""
+
+#: utils/dashboard.py:32
+msgid "Change password"
+msgstr ""
+
+#: utils/dashboard.py:34
+msgid "Log out"
+msgstr ""
+
+#: utils/dashboard.py:38
+msgid "Quick links"
+msgstr ""
+
+#: utils/dashboard.py:48
+msgid "Applications"
+msgstr ""
+
+#: utils/dashboard.py:54
+msgid "Administration"
+msgstr ""
+
+#: utils/dashboard.py:59 utils/dashboard.py:110
+msgid "Recent Actions"
+msgstr ""
