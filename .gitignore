@@ -39,6 +39,7 @@ nosetests.xml
 
 # project
 testcms/
+jgdw/
 manage.py
 
 *.swp
