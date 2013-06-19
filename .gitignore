@@ -41,7 +41,7 @@ nosetests.xml
 testcms/
 jgdw/
 media/
-static/
+/static/
 templates/
 water/
 mystatic/
