@@ -1,3 +1,5 @@
+import datetime
+
 try:
     import json
 except ImportError:
@@ -17,6 +19,7 @@ from django.template.response import TemplateResponse
 from mptt.admin import MPTTModelAdmin
 
 from models import Category, EntryBase, Article, Video
+from conf import settings as tinycms_settings
 
 class CategoryAdmin(MPTTModelAdmin):
     list_display = ('pk', 'name', 'get_absolute_url_link', 'tree_id', 'lft', 'rght', 'level', 'parent', 'slug', 'active', 'create_date')
@@ -106,7 +109,7 @@ class EntryBaseAdmin(admin.ModelAdmin):
         qs = super(EntryBaseAdmin, self).queryset(request)
         if request.user.is_superuser or request.user.has_perm('entries.view_all_entries'):
             return qs
-        return qs.filter(author=request.user, removed=False)
+        return qs.filter(author=request.user)
 
     def save_model(self, request, obj, form, change):
         now = datetime.datetime.now()
@@ -121,10 +124,14 @@ class EntryBaseAdmin(admin.ModelAdmin):
             obj.publish = False
             obj.publisher = None
         else:
-            if not request.user.has_perm('entries.publish_entry'):
-                obj.publish = False
-            elif obj.publish:
-                obj.publisher = request.user
+            if not tinycms_settings.PUBLISH_DEFAULT:
+                if not request.user.has_perm('entries.publish_entry'):
+                    obj.publish = False
+                elif obj.publish:
+                    obj.publisher = request.user
+            else:
+                if obj.publish:
+                    obj.publisher = request.user
         obj.save()
 
     def publish(modeladmin, request, queryset):
@@ -268,8 +275,9 @@ class EntryBaseAdmin(admin.ModelAdmin):
     delete_symbol.short_description =_('delete symbol')
 
     def get_readonly_fields(self, request, obj=None):
-        if not request.user.has_perm('entries.publish_entry'):
-            return ('publish',)
+        if not tinycms_settings.PUBLISH_DEFAULT:
+            if not request.user.has_perm('entries.publish_entry'):
+                return ('publish',)
 
         return self.readonly_fields
 
@@ -355,3 +363,26 @@ class VideoAdmin(EntryBaseAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Video, VideoAdmin)
+
+# django floatpages
+from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
+from django.contrib.flatpages.models import FlatPage
+
+class FlatPageExtendAdmin(FlatPageAdmin):
+
+    class Media:
+        js = (
+            'js/jquery.min.js',
+            'js/tiny_mce/jquery.tinymce.js',
+            'js/tiny_mce/tiny_mce.js',
+            'js/flatpages-editor.js',
+            'js/colorbox/jquery.colorbox-min.js',
+        )
+        css = {
+            'all': ('js/colorbox/colorbox.css',
+                    'js/swfupload/default.css',
+            ),
+        }
+
+admin.site.unregister(FlatPage)
+admin.site.register(FlatPage, FlatPageExtendAdmin)

@@ -40,10 +40,11 @@ nosetests.xml
 # project
 testcms/
 jgdw/
-meida/
+media/
 static/
 templates/
 water/
+mystatic/
 manage.py
 
 *.swp

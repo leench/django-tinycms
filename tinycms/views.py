@@ -15,6 +15,7 @@ from conf import settings as tinycms_settings
 from models import Category, EntryBase, Article, Video, Media
 
 def home(request, template_name=tinycms_settings.TEMPLATE_DEFAULT+"/home.html"):
+    active = 1
     context = RequestContext(request)
     
     return render_to_response(template_name, locals(), context)
@@ -34,9 +35,18 @@ def category_detail(request, slugs, tree_id=1, template_name=tinycms_settings.TE
         except:
             raise Http404
 
-    if c.template:
-        template_name = tinycms_settings.TEMPLATE_DEFAULT + "/%s" % c.template
+    if c.url:
+        return HttpResponseRedirect(c.url)
 
+    if c.template:
+        template_name = "default/%s" % c.template
+    entries = EntryBase.objects.filter(publish=True, category__lft__gte=c.lft, category__rght__lte=c.rght)
+    entries_sub = c.sub_category.all()
+    if entries_sub:
+        entries = entries | entries_sub
+    entries = entries.order_by('-pub_date')
+
+    active = c.pk
     c_siblings  = c.get_siblings(include_self=True).filter(active=True)
     c_ancestors = c.get_ancestors(ascending=False, include_self=False).filter(active=True)
     c_children  = c.get_children().filter(active=True)
