@@ -27,3 +27,19 @@ div.breadcrumbs {
 div.breadcrumbs a {
     display: inline;
 }
+
+li, dt, dd, blockquote, code, pre, .small, td, th, tfoot td, input, textarea, select, .form-row p, .module h2, .module caption, .inline-group h2, div.breadcrumbs, #user-tools, #content-related h4, #changelist #toolbar form input, #changelist-filter h2, .paginator, #changelist .actions span.question, #changelist .actions label, #changelist .actions .button, .form-row, form .form-row p, .inline-related h3, .inline-related h3 span.delete label, .inline-related fieldset.module h3, .inline-group .tabular tr.add-row td a, p.datetime, .datetime span, p.file-upload, span.clearable-file-input label, .calendarbox, .clockbox, .calendar caption, .calendarbox h2, .calendar td, .editinline-stacked .controls, thead th, tfoot td { font-size: 12px; }
+
+.page_marker.children {
+    background: url(/static/imgs/disclosure-down.png) no-repeat right top;
+	padding: 0 15px 0 0;
+}
+
+.page_marker.closed {
+    background: url(/static/imgs/disclosure-right.png) no-repeat right top;
+	padding: 0 15px 0 0;
+}
+
+.row1:hover, .row2:hover {
+    background: rgb(209, 216, 230);
+}
