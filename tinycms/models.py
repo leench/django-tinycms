@@ -61,6 +61,9 @@ class Symbol(models.Model):
         verbose_name = _('symbol')
         verbose_name_plural = _('symbols')
 
+def get_default_symbol():
+    return Symbol.objects.filter(is_default=True)
+
 class TitleClass(models.Model):
     name        = models.CharField(_("name"), max_length=100)
     title_class = models.CharField(_("title class"), max_length=20)
@@ -88,7 +91,7 @@ class EntryBase(models.Model):
     thumbnail           = models.ImageField(_('thumbnail'), upload_to = 'images/thumbs/%Y/%m/%d', blank=True)
     alternate_thumbnail = models.ImageField(_('alternate_thumbnail'), upload_to = 'images/thumbs/%Y/%m/%d', blank=True)
     description         = models.TextField(_("description"), max_length=1500, blank=True)
-    symbol              = models.ManyToManyField(Symbol, verbose_name=_('symbol'), blank=True, null=True)
+    symbol              = models.ManyToManyField(Symbol, verbose_name=_('symbol'), default=get_default_symbol, blank=True, null=True)
     publish             = models.BooleanField(_('publish'), default=tinycms_settings.PUBLISH_DEFAULT)
     publisher           = models.ForeignKey(User, verbose_name=_('publisher'), related_name="entry_publisher", blank=True, null=True)
     create_date         = models.DateTimeField(_('create date'), auto_now_add=True, editable=False)

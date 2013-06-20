@@ -18,7 +18,7 @@ from django.template.response import TemplateResponse
 
 from mptt.admin import MPTTModelAdmin
 
-from models import Category, EntryBase, Article, Video
+from models import Category, EntryBase, Article, Video, Symbol, TitleClass, Hit, Media
 from conf import settings as tinycms_settings
 
 class CategoryAdmin(MPTTModelAdmin):
@@ -296,7 +296,7 @@ class ArticleAdmin(EntryBaseAdmin):
                        ('thumbnail', 'alternate_thumbnail'),
                        ('description'),
                        ('content'),
-                       ('symbol', 'sub_category'),
+                       ('symbol'),
                        ('titleclass'),
                        ('pub_date'),
                        ('allow_comment'),
@@ -304,7 +304,8 @@ class ArticleAdmin(EntryBaseAdmin):
         }),
         (_('extra'), {
             'classes': ['collapse', 'extrapretty', 'article_content'],
-            'fields': [('template'),
+            'fields': [('sub_category'),
+                       ('template'),
                        ('meta_extra'),
                       ]
         }),
@@ -340,7 +341,7 @@ class VideoAdmin(EntryBaseAdmin):
                        ('thumbnail', 'alternate_thumbnail'),
                        ('description'),
                        ('video_url'),
-                       ('symbol', 'sub_category'),
+                       ('symbol'),
                        ('titleclass'),
                        ('pub_date'),
                        ('allow_comment'),
@@ -348,7 +349,8 @@ class VideoAdmin(EntryBaseAdmin):
         }),
         (_('extra'), {
             'classes': ['collapse', 'extrapretty', 'article_content'],
-            'fields': [('template'),
+            'fields': [('sub_category'),
+                       ('template'),
                        ('meta_extra'),
                       ]
         }),
@@ -384,5 +386,7 @@ class FlatPageExtendAdmin(FlatPageAdmin):
             ),
         }
 
+admin.site.register(Symbol)
+admin.site.register(TitleClass)
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageExtendAdmin)
