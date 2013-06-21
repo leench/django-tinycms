@@ -56,7 +56,7 @@ def get_entries_list(cid="1", num=1, frm=0, symbols="", children=True, cls="", *
     if cls:
         entries = entries.filter(classname=cls)
 
-    entries = entries.order_by('-order', '-pub_date')[frm:num+frm]
+    entries = entries.order_by('-pub_date')[frm:num+frm]
     if settings.DEBUG:
         print "get_entries_list Timer: %fs" % (time.time() - st)
     return entries
