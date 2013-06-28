@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.middleware.csrf import get_token
 from django.conf import settings
 from django.http import HttpResponseRedirect, HttpResponse, Http404
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 from conf import settings as tinycms_settings
 from models import Category, EntryBase, Article, Video, Media
@@ -190,6 +191,7 @@ def upload_page(request, extra_context=None):
     template_name = "upload_image.html"
     return render_to_response(template_name, locals(), context)
 
+@csrf_exempt
 @login_required
 def upload(request):
     if request.method == 'POST':
