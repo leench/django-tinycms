@@ -13,10 +13,11 @@ from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 from conf import settings as tinycms_settings
-from models import Category, EntryBase, Article, Video, Media
+from models import Category, EntryBase, Article, Video, Media, Link
 
 def home(request, template_name=tinycms_settings.TEMPLATE_DEFAULT+"/home.html"):
     active = 1
+    links = Link.objects.filter(active=True)
     context = RequestContext(request)
     
     return render_to_response(template_name, locals(), context)

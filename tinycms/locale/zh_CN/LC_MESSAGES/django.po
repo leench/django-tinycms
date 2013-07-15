@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-18 15:06+0800\n"
+"POT-Creation-Date: 2013-07-04 10:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,307 +18,384 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: admin.py:28
+#: admin.py:31
 msgid "absolute url"
 msgstr "链接"
 
-#: admin.py:45
+#: admin.py:48
 msgid "category(include children)"
 msgstr "栏目(包括子栏目)"
 
-#: admin.py:81
+#: admin.py:84
 #, python-format
 msgid "<a href=\"%s\" target=\"_blank\">preview</a>"
 msgstr "<a href=\"%s\" target=\"_blank\">预览</a>"
 
-#: admin.py:83
+#: admin.py:86
 msgid "preview"
 msgstr "预览"
 
-#: admin.py:89
+#: admin.py:92
 msgid "not published"
 msgstr "未发布"
 
-#: admin.py:91
+#: admin.py:94
 msgid "true url"
 msgstr "真实链接"
 
-#: admin.py:95
-msgid "True"
-msgstr ""
-
-#: admin.py:97
-msgid "False"
-msgstr ""
-
 #: admin.py:98
+msgid "True"
+msgstr "有"
+
+#: admin.py:100
+msgid "False"
+msgstr "无"
+
+#: admin.py:101
 msgid "thumb"
 msgstr "缩略图"
 
-#: admin.py:103 models.py:62
+#: admin.py:106 models.py:63
 msgid "symbols"
 msgstr "标记"
 
-#: admin.py:133 models.py:92
+#: admin.py:140 models.py:96
 msgid "publish"
 msgstr "发布"
 
-#: admin.py:138
+#: admin.py:145
 msgid "unpublish"
 msgstr "未发布"
 
-#: admin.py:172
+#: admin.py:179
 msgid "Select category that you want change."
 msgstr "选择你要更改的栏目。"
 
-#: admin.py:190
+#: admin.py:197
 msgid "change category"
 msgstr "更改栏目"
 
-#: admin.py:216
+#: admin.py:223
 msgid "Select symbol(s) that you want add."
 msgstr "选择你要添加的标记。"
 
-#: admin.py:229
+#: admin.py:236
 msgid "add symbol"
 msgstr "添加标记"
 
-#: admin.py:255
+#: admin.py:262
 msgid "Select symbol(s) that you want delete."
 msgstr "选择你要删除的标记。"
 
-#: admin.py:268
+#: admin.py:275
 msgid "delete symbol"
 msgstr "移除标记"
 
-#: admin.py:297 admin.py:341 models.py:23 models.py:100
+#: admin.py:305 admin.py:350 models.py:24 models.py:104
 msgid "extra"
 msgstr "额外"
 
-#: models.py:14 models.py:52 models.py:65
+#: models.py:15 models.py:53 models.py:69
 msgid "name"
 msgstr "名称"
 
-#: models.py:15 models.py:84
+#: models.py:16 models.py:88
 msgid "slug"
 msgstr "Slug"
 
-#: models.py:16
+#: models.py:17
 msgid "url"
 msgstr "链接"
 
-#: models.py:16
+#: models.py:17
 msgid "An URL to use instead of the one derived from the category hierarchy."
 msgstr "栏目链接"
 
-#: models.py:17
+#: models.py:18 models.py:187
 msgid "active"
 msgstr "有效"
 
-#: models.py:18
+#: models.py:19 models.py:186
 msgid "order"
 msgstr "排序"
 
-#: models.py:19 models.py:54 models.py:67 models.py:90
+#: models.py:20 models.py:55 models.py:71 models.py:94
 msgid "description"
 msgstr "描述"
 
-#: models.py:20
+#: models.py:21
 msgid "marker"
 msgstr "标记"
 
-#: models.py:21
+#: models.py:22
 msgid "category template"
 msgstr "栏目模板"
 
-#: models.py:22 models.py:99
+#: models.py:23 models.py:103
 msgid "keywords"
 msgstr "关键字"
 
-#: models.py:22 models.py:99
+#: models.py:23 models.py:103
 msgid "Comma-separated keywords for search engines."
 msgstr "搜索引擎用的关键字"
 
-#: models.py:23 models.py:100
+#: models.py:24 models.py:104
 msgid ""
 "(Advanced) Any additional HTML to be placed verbatim in the &lt;head&gt;"
-msgstr ""
+msgstr "(高级) 在 &lt;head&gt; 中额外的 HTML"
 
-#: models.py:24 models.py:94
+#: models.py:25 models.py:98
 msgid "create date"
 msgstr "创建时间"
 
-#: models.py:43
+#: models.py:44
 msgid "This slug already exist in this level."
 msgstr "本层存在相同的slug"
 
-#: models.py:46 models.py:85
+#: models.py:47 models.py:89
 msgid "category"
 msgstr "栏目"
 
-#: models.py:47
+#: models.py:48
 msgid "categories"
 msgstr "栏目"
 
-#: models.py:49
+#: models.py:50
 msgid "Categories"
 msgstr "栏目"
 
-#: models.py:53 models.py:61 models.py:91
+#: models.py:54 models.py:62 models.py:95
 msgid "symbol"
 msgstr "标记"
 
-#: models.py:55
+#: models.py:56
 msgid "is default"
 msgstr "默认"
 
-#: models.py:66 models.py:73 models.py:80
+#: models.py:70 models.py:77 models.py:84
 msgid "title class"
 msgstr "标题类"
 
-#: models.py:74
+#: models.py:78
 msgid "title classes"
 msgstr "标题类"
 
-#: models.py:77
+#: models.py:81
 msgid "author"
 msgstr "作者"
 
-#: models.py:78
+#: models.py:82
 msgid "modified by"
 msgstr "修改者"
 
-#: models.py:79 models.py:169
+#: models.py:83 models.py:173 models.py:182
 msgid "title"
 msgstr "标题"
 
-#: models.py:81
+#: models.py:85
 msgid "alternate title"
 msgstr "备用标题"
 
-#: models.py:82
+#: models.py:86
 msgid "jump"
 msgstr "跳转"
 
-#: models.py:83
+#: models.py:87
 msgid "jump to url"
 msgstr "跳转到"
 
-#: models.py:84
+#: models.py:88
 msgid "default is the id of entry."
 msgstr ""
 
-#: models.py:86
+#: models.py:90
 msgid "sub_category"
 msgstr "副栏目"
 
-#: models.py:87
+#: models.py:91
 msgid "source"
 msgstr "来源"
 
-#: models.py:88
+#: models.py:92
 msgid "thumbnail"
 msgstr "缩略图"
 
-#: models.py:89
+#: models.py:93
 msgid "alternate_thumbnail"
 msgstr "备用缩略图"
 
-#: models.py:93
+#: models.py:97
 msgid "publisher"
 msgstr "发布者"
 
-#: models.py:95
+#: models.py:99
 msgid "publish date"
 msgstr "发布时间"
 
-#: models.py:96
+#: models.py:100
 msgid "modification time"
 msgstr "修改时间"
 
-#: models.py:97
+#: models.py:101
 msgid "allow comment"
 msgstr "允许评论"
 
-#: models.py:98
+#: models.py:102
 msgid "is draft"
 msgstr "草稿"
 
-#: models.py:101
+#: models.py:105
 msgid "entry template"
 msgstr "文档模板"
 
-#: models.py:135
+#: models.py:139
 msgid "Can publish entry"
 msgstr "能够发布文档"
 
-#: models.py:136
+#: models.py:140
 msgid "Can view all entries"
 msgstr "能够查看所有文档"
 
-#: models.py:143
+#: models.py:147
 msgid "content"
 msgstr "内容"
 
-#: models.py:146
+#: models.py:150
 msgid "article"
 msgstr "文章"
 
-#: models.py:147
+#: models.py:151
 msgid "articles"
 msgstr "文章"
 
-#: models.py:150
+#: models.py:154
 msgid "video url"
 msgstr "视频地址"
 
-#: models.py:153
+#: models.py:157
 msgid "video"
 msgstr "视频"
 
-#: models.py:154
+#: models.py:158
 msgid "videos"
 msgstr "视频"
 
-#: models.py:157
+#: models.py:161
 msgid "entry"
 msgstr "文档"
 
-#: models.py:158
+#: models.py:162
 msgid "entry hit times"
 msgstr "文档点击次数"
 
-#: models.py:159
+#: models.py:163
 msgid "last hit time"
 msgstr "最后点击时间"
 
-#: models.py:162
+#: models.py:166
 #, python-format
 msgid "%s times"
 msgstr "%s 次"
 
-#: models.py:165
+#: models.py:169
 msgid "hit times"
 msgstr "点击次数"
 
-#: models.py:170
+#: models.py:174
 msgid "uploader"
 msgstr "上传者"
 
-#: models.py:171
+#: models.py:175
 msgid "image"
 msgstr "图片"
 
-#: models.py:172
+#: models.py:176
 msgid "upload date"
 msgstr "上传时间"
 
-#: views.py:122
+#: models.py:183 models.py:197
+msgid "link"
+msgstr "链接"
+
+#: models.py:184
+msgid "logo"
+msgstr "Logo"
+
+#: models.py:185
+msgid "add date time"
+msgstr "添加时间"
+
+#: models.py:198
+msgid "links"
+msgstr "链接"
+
+#: views.py:134
 msgid "prev"
+msgstr "上一页"
+
+#: views.py:142
+msgid "next"
+msgstr "下一页"
+
+#: templates/admin/add_symbol_confirmation.html:21
+#: templates/admin/change_selected_category_confirmation.html:8
+#: templates/admin/delete_symbol_confirmation.html:21
+msgid "Home"
 msgstr ""
 
-#: views.py:130
-msgid "next"
+#: templates/admin/add_symbol_confirmation.html:24
+msgid "Add symbol(s) of multiple objects"
+msgstr ""
+
+#: templates/admin/add_symbol_confirmation.html:29
+#, python-format
+msgid ""
+"Please select symbol that you want all of the follow %(objects_name)s to add:"
+msgstr ""
+
+#: templates/admin/add_symbol_confirmation.html:39
+#: templates/admin/delete_symbol_confirmation.html:39
+#, fuzzy
+msgid "Symbol:"
+msgstr "标记"
+
+#: templates/admin/add_symbol_confirmation.html:45
+#: templates/admin/delete_symbol_confirmation.html:45
+#, fuzzy
+msgid "Symbol"
+msgstr "标记"
+
+#: templates/admin/add_symbol_confirmation.html:52
+#: templates/admin/change_selected_category_confirmation.html:38
+#: templates/admin/delete_symbol_confirmation.html:52
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: templates/admin/change_selected_category_confirmation.html:11
+msgid "Change category of multiple objects"
+msgstr ""
+
+#: templates/admin/change_selected_category_confirmation.html:16
+#, python-format
+msgid ""
+"Please select category that you want all of the follow %(objects_name)s to "
+"change:"
+msgstr ""
+
+#: templates/admin/change_selected_category_confirmation.html:26
+#, fuzzy
+msgid "Categories:"
+msgstr "栏目"
+
+#: templates/admin/delete_symbol_confirmation.html:24
+msgid "Delete symbol(s) of multiple objects"
+msgstr ""
+
+#: templates/admin/delete_symbol_confirmation.html:29
+#, python-format
+msgid ""
+"Please select symbol that you want all of the follow %(objects_name)s to "
+"delete:"
 msgstr ""
 
 #: utils/dashboard.py:29

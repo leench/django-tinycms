@@ -18,7 +18,7 @@ from django.template.response import TemplateResponse
 
 from mptt.admin import MPTTModelAdmin
 
-from models import Category, EntryBase, Article, Video, Symbol, TitleClass, Hit, Media
+from models import Category, EntryBase, Article, Video, Symbol, TitleClass, Hit, Media, Link
 from conf import settings as tinycms_settings
 
 class CategoryAdmin(MPTTModelAdmin):
@@ -362,9 +362,13 @@ class VideoAdmin(EntryBaseAdmin):
             'js/entry-actions.js',
         )
 
+class LinkAdmin(admin.ModelAdmin):
+    list_display = ('title', 'link', 'add_datetime', 'active')
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Video, VideoAdmin)
+admin.site.register(Link, LinkAdmin)
 
 # django floatpages
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin

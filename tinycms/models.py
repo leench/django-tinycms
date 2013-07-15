@@ -1,4 +1,5 @@
 import datetime
+import re
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -171,9 +172,27 @@ class Hit(models.Model):
 class Media(models.Model):
     title           = models.CharField(_('title'), max_length=255)
     uploader        = models.ForeignKey(User, verbose_name=_('uploader'))
-    image           = models.ImageField(_('image'), upload_to = 'images/%Y/%m/%d')
+    image           = models.ImageField(_('image'), upload_to='images/%Y/%m/%d')
     upload_datetime = models.DateTimeField(_('upload date'), auto_now_add=True, editable=False)
 
     def __unicode__(self):
         return "%s" % self.title
 
+class Link(models.Model):
+    title           = models.CharField(_('title'), max_length=255)
+    link            = models.URLField(_('link'), max_length=255)
+    logo            = models.ImageField(_('logo'), upload_to='links', null=True, blank=True)
+    add_datetime    = models.DateTimeField(_('add date time'), auto_now_add=True, editable=False)
+    order           = models.IntegerField(_('order'), default=20)
+    active          = models.BooleanField(_('active'), default=True)
+
+    def __unicode__(self):
+        return "%s" % self.title
+
+    def get_absolute_url(self):
+        return "%s" % self.link
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = _('link')
+        verbose_name_plural = _('links')
