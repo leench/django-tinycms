@@ -49,3 +49,4 @@ manage.py
 
 *.swp
 uwsgi.ini
+apache_django_wsgi.conf
