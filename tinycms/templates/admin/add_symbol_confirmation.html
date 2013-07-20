@@ -1,0 +1,55 @@
+{% extends "admin/base_site.html" %}
+{% load i18n l10n %}
+{% load url from future %}
+{% load admin_urls %}
+{% load admin_static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="/static/admin/css/widgets.css" /> 
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/SelectBox.js"></script>
+<script type="text/javascript" src="/static/admin/js/SelectFilter2.js"></script>
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=app_label %}">{{ app_label|capfirst|escape }}</a>
+&rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+&rsaquo; {% trans 'Add symbol(s) of multiple objects' %}
+</div>
+{% endblock %}
+
+{% block content %}
+    <p>{% blocktrans %}Please select symbol that you want all of the follow {{ objects_name }} to add:{% endblocktrans %}</p>
+	<ul>
+    {% for q in queryset %}
+        <li>{{ q }}</li>
+    {% endfor %}
+	</ul>
+
+    <form action="" method="post">{% csrf_token %}
+    <div class="module clearfix">
+		<p>
+			<label for="t_symbol" style="float:left;margin-right:20px;">{% blocktrans %}Symbol:{% endblocktrans %}</label>
+			<select multiple="multiple" name="t_symbol" id="t_symbol">
+			{% for symbol in symbols %}
+				<option value="{{ symbol.pk }}">{{ symbol }}</option>
+			{% endfor %}
+			</select>
+			<script type="text/javascript">addEvent(window, "load", function(e) {SelectFilter.init("t_symbol", "{% blocktrans %}Symbol{% endblocktrans %}", 0, "{% static "admin/" %}"); });</script>
+		</p>
+    {% for obj in queryset %}
+    <input type="hidden" name="{{ action_checkbox_name }}" value="{{ obj.pk|unlocalize }}" />
+    {% endfor %}
+    <input type="hidden" name="action" value="add_symbol" />
+    <input type="hidden" name="post" value="yes" />
+    <input type="submit" value="{% trans "Yes, I'm sure" %}" style="display:block;clear:both;" />
+    </div>
+    </form>
+{% endblock %}

@@ -42,7 +42,7 @@ testcms/
 jgdw/
 media/
 /static/
-templates/
+/templates/
 water/
 mystatic/
 manage.py
