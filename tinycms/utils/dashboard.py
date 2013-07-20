@@ -26,8 +26,6 @@ class CustomIndexDashboard(Dashboard):
         # append a link list module for "quick links"
         request.user.is_superuser
         children=[
-            [_('Add Article'), '/admin/article/add/'],
-            [_('Add file'), '/admin/filer/folder/'],
             [_('Return to site'), '/'],
             [_('Change password'),
              reverse('%s:password_change' % site_name)],

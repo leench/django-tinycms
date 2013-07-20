@@ -196,3 +196,10 @@ class Link(models.Model):
         ordering = ['order']
         verbose_name = _('link')
         verbose_name_plural = _('links')
+
+_('Tinycms')
+_('Auth')
+_('Flatpages')
+_('Sites')
+_('Users')
+
