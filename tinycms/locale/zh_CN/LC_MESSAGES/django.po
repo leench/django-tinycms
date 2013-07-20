@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 18:19+0800\n"
+"POT-Creation-Date: 2013-07-20 20:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -356,6 +356,49 @@ msgstr "上一页"
 #: views.py:142
 msgid "next"
 msgstr "下一页"
+
+#: templates/admin/add_symbol_confirmation.html:21
+#: templates/admin/change_selected_category_confirmation.html:8
+msgid "Home"
+msgstr ""
+
+#: templates/admin/add_symbol_confirmation.html:24
+msgid "Add symbol(s) of multiple objects"
+msgstr "为多个项目添加标记"
+
+#: templates/admin/add_symbol_confirmation.html:29
+#, python-format
+msgid ""
+"Please select symbol that you want all of the follow %(objects_name)s to add:"
+msgstr "为以下的 %(objects_name)s 选择你要添加的标记："
+
+#: templates/admin/add_symbol_confirmation.html:39
+msgid "Symbol:"
+msgstr "标记："
+
+#: templates/admin/add_symbol_confirmation.html:45
+msgid "Symbol"
+msgstr "标记"
+
+#: templates/admin/add_symbol_confirmation.html:52
+#: templates/admin/change_selected_category_confirmation.html:38
+msgid "Yes, I'm sure"
+msgstr "是的，我确定"
+
+#: templates/admin/change_selected_category_confirmation.html:11
+msgid "Change category of multiple objects"
+msgstr "为多个项目更改栏目"
+
+#: templates/admin/change_selected_category_confirmation.html:16
+#, python-format
+msgid ""
+"Please select category that you want all of the follow %(objects_name)s to "
+"change:"
+msgstr "为以下的 %(objects_name)s 选择你要添加的栏目："
+
+#: templates/admin/change_selected_category_confirmation.html:26
+msgid "Categories:"
+msgstr "栏目："
 
 #: utils/dashboard.py:29
 msgid "Return to site"
