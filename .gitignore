@@ -42,10 +42,11 @@ testcms/
 jgdw/
 media/
 /static/
-templates/
+/templates/
 water/
 mystatic/
 manage.py
 
 *.swp
 uwsgi.ini
+apache_django_wsgi.conf

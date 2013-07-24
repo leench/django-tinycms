@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-04 10:48+0800\n"
+"POT-Creation-Date: 2013-07-20 20:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,6 +329,26 @@ msgstr "添加时间"
 msgid "links"
 msgstr "链接"
 
+#: models.py:200
+msgid "Tinycms"
+msgstr "发布系统"
+
+#: models.py:201
+msgid "Auth"
+msgstr "用户系统"
+
+#: models.py:202
+msgid "Flatpages"
+msgstr "简单页面"
+
+#: models.py:203
+msgid "Sites"
+msgstr "站点"
+
+#: models.py:204
+msgid "Users"
+msgstr "用户"
+
 #: views.py:134
 msgid "prev"
 msgstr "上一页"
@@ -339,98 +359,71 @@ msgstr "下一页"
 
 #: templates/admin/add_symbol_confirmation.html:21
 #: templates/admin/change_selected_category_confirmation.html:8
-#: templates/admin/delete_symbol_confirmation.html:21
 msgid "Home"
 msgstr ""
 
 #: templates/admin/add_symbol_confirmation.html:24
 msgid "Add symbol(s) of multiple objects"
-msgstr ""
+msgstr "为多个项目添加标记"
 
 #: templates/admin/add_symbol_confirmation.html:29
 #, python-format
 msgid ""
 "Please select symbol that you want all of the follow %(objects_name)s to add:"
-msgstr ""
+msgstr "为以下的 %(objects_name)s 选择你要添加的标记："
 
 #: templates/admin/add_symbol_confirmation.html:39
-#: templates/admin/delete_symbol_confirmation.html:39
-#, fuzzy
 msgid "Symbol:"
-msgstr "标记"
+msgstr "标记："
 
 #: templates/admin/add_symbol_confirmation.html:45
-#: templates/admin/delete_symbol_confirmation.html:45
-#, fuzzy
 msgid "Symbol"
 msgstr "标记"
 
 #: templates/admin/add_symbol_confirmation.html:52
 #: templates/admin/change_selected_category_confirmation.html:38
-#: templates/admin/delete_symbol_confirmation.html:52
 msgid "Yes, I'm sure"
-msgstr ""
+msgstr "是的，我确定"
 
 #: templates/admin/change_selected_category_confirmation.html:11
 msgid "Change category of multiple objects"
-msgstr ""
+msgstr "为多个项目更改栏目"
 
 #: templates/admin/change_selected_category_confirmation.html:16
 #, python-format
 msgid ""
 "Please select category that you want all of the follow %(objects_name)s to "
 "change:"
-msgstr ""
+msgstr "为以下的 %(objects_name)s 选择你要添加的栏目："
 
 #: templates/admin/change_selected_category_confirmation.html:26
-#, fuzzy
 msgid "Categories:"
-msgstr "栏目"
-
-#: templates/admin/delete_symbol_confirmation.html:24
-msgid "Delete symbol(s) of multiple objects"
-msgstr ""
-
-#: templates/admin/delete_symbol_confirmation.html:29
-#, python-format
-msgid ""
-"Please select symbol that you want all of the follow %(objects_name)s to "
-"delete:"
-msgstr ""
+msgstr "栏目："
 
 #: utils/dashboard.py:29
-#, fuzzy
-msgid "Add Article"
-msgstr "文章"
-
-#: utils/dashboard.py:30
-msgid "Add file"
-msgstr ""
-
-#: utils/dashboard.py:31
 msgid "Return to site"
 msgstr ""
 
-#: utils/dashboard.py:32
+#: utils/dashboard.py:30
 msgid "Change password"
 msgstr ""
 
-#: utils/dashboard.py:34
+#: utils/dashboard.py:32
 msgid "Log out"
 msgstr ""
 
-#: utils/dashboard.py:38
+#: utils/dashboard.py:36
 msgid "Quick links"
 msgstr ""
 
-#: utils/dashboard.py:48
+#: utils/dashboard.py:46
 msgid "Applications"
 msgstr ""
 
-#: utils/dashboard.py:54
+#: utils/dashboard.py:52
 msgid "Administration"
 msgstr ""
 
-#: utils/dashboard.py:59 utils/dashboard.py:110
+#: utils/dashboard.py:57 utils/dashboard.py:108
 msgid "Recent Actions"
 msgstr ""
