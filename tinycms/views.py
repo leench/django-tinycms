@@ -192,7 +192,7 @@ def upload_page(request, extra_context=None):
     template_name = "upload_image.html"
     return render_to_response(template_name, locals(), context)
 
-@csrf_exempt
+#@csrf_exempt
 @login_required
 def upload(request):
     if request.method == 'POST':
