@@ -13,20 +13,20 @@ from tinycms.models import Category, Article, Video, EntryBase
 register = Library()
 
 @register.assignment_tag
-def get_entries_list(cid="1", num=1, frm=0, symbols="", children=True, cls="", *args, **kwargs):
+def get_entries_list(cid="1", num=1, frm=0, symbols="", children=True, cls="", obj=EntryBase, *args, **kwargs):
     if settings.DEBUG:
         st = time.time()
     cid = str(cid)
     clist = cid.split(",")
     #now = datetime.datetime.now()
-    entries = EntryBase.objects.filter(pk__lt=0)
+    entries = obj.objects.filter(pk__lt=0)
     all_entries = {}
     if children:
         for cpk in clist:
             c = Category.objects.get(pk=cpk)
             #entries = EntryBase.objects.filter(publish=True, category__lft__gte=c.lft, category__rght__lte=c.rght, category__tree_id=c.tree_id)
             #entries_sub = EntryBase.objects.filter(publish=True, sub_category__lft__gte=c.lft, sub_category__rght__lte=c.rght, sub_category__tree_id=c.tree_id)
-            all_entries[cpk] = EntryBase.objects.filter(
+            all_entries[cpk] = obj.objects.filter(
                 Q(publish=True) & (
                     ( Q(category__lft__gte=c.lft) & Q(category__rght__lte=c.rght) & Q(category__tree_id=c.tree_id) ) | 
                     ( Q(sub_category__lft__gte=c.lft) & Q(sub_category__rght__lte=c.rght) & Q(sub_category__tree_id=c.tree_id) )
@@ -36,7 +36,7 @@ def get_entries_list(cid="1", num=1, frm=0, symbols="", children=True, cls="", *
         for cpk in clist:
             #entries = EntryBase.objects.filter(publish=True, category__pk=cid)
             #entries_sub = EntryBase.objects.filter(publish=True, sub_category__pk=cid)
-            all_entries = EntryBase.objects.filter(
+            all_entries = obj.objects.filter(
                 Q(publish=True) &
                 ( Q(category__pk=cpk) | Q(sub_category__pk=cpk) )
                 #& Q(pub_date__lte=now)
