@@ -2,11 +2,17 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from tinycms.commentmod import CommentMod
+from tinycms.commentmod.models import Reply
+
+class ReplyAdmin(admin.TabularInline):
+    model = Reply
+    extra = 1
 
 class CommentModAdmin(admin.ModelAdmin):
     list_display = ('user_name', 'is_public', 'user_email', 'comment', 'submit_date')
     ordering = ('-submit_date',)
     actions = ['public', 'unpublic']
+    inlines = [ReplyAdmin, ]
 
     def publick(modeladmin, request, queryset):
         queryset.update(is_public=True)

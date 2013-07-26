@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-26 12:06+0800\n"
+"POT-Creation-Date: 2013-07-26 14:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -358,11 +358,11 @@ msgstr "上一页"
 msgid "next"
 msgstr "下一页"
 
-#: commentmod/admin.py:13
+#: commentmod/admin.py:19
 msgid "public"
 msgstr "发布"
 
-#: commentmod/admin.py:17
+#: commentmod/admin.py:23
 msgid "unpublic"
 msgstr "未发布"
 
@@ -374,7 +374,7 @@ msgstr "称呼"
 msgid "phone"
 msgstr "电话号码"
 
-#: commentmod/models.py:10
+#: commentmod/models.py:10 commentmod/models.py:14
 msgid "comment"
 msgstr "评论"
 
@@ -382,7 +382,23 @@ msgstr "评论"
 msgid "comments"
 msgstr "评论"
 
-#: commentmod/models.py:13
+#: commentmod/models.py:15
+msgid "show name"
+msgstr "显示称呼"
+
+#: commentmod/models.py:16
+msgid "reply"
+msgstr "回复"
+
+#: commentmod/models.py:19
+msgid "Reply"
+msgstr "回复"
+
+#: commentmod/models.py:20
+msgid "Replies"
+msgstr "回复"
+
+#: commentmod/models.py:22
 msgid "CommentMod"
 msgstr "评论"
 

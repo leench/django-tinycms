@@ -10,4 +10,13 @@ class CommentMod(Comment):
         verbose_name = _('comment')
         verbose_name_plural = _('comments')
 
+class Reply(models.Model):
+    comment     = models.ForeignKey(CommentMod, verbose_name=_('comment'))
+    show_name   = models.CharField(_('show name'), max_length=255)
+    reply       = models.TextField(_('reply'))
+
+    class Meta:
+        verbose_name = _('Reply')
+        verbose_name_plural = _('Replies')
+
 _('CommentMod')
