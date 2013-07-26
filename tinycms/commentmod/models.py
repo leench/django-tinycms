@@ -7,6 +7,7 @@ class CommentMod(Comment):
     phone = models.CharField(_('phone'), max_length=64, blank=True)
 
     class Meta:
+        ordering = ['-submit_date']
         verbose_name = _('comment')
         verbose_name_plural = _('comments')
 
