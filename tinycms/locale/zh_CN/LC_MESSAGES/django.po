@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 20:06+0800\n"
+"POT-Creation-Date: 2013-07-26 12:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,7 +188,8 @@ msgstr "作者"
 msgid "modified by"
 msgstr "修改者"
 
-#: models.py:83 models.py:173 models.py:182
+#: models.py:83 models.py:173 models.py:182 commentmod/forms.py:11
+#: commentmod/models.py:6
 msgid "title"
 msgstr "标题"
 
@@ -357,8 +358,37 @@ msgstr "上一页"
 msgid "next"
 msgstr "下一页"
 
+#: commentmod/admin.py:13
+msgid "public"
+msgstr "发布"
+
+#: commentmod/admin.py:17
+msgid "unpublic"
+msgstr "未发布"
+
+#: commentmod/forms.py:12
+msgid "callName"
+msgstr "称呼"
+
+#: commentmod/forms.py:13 commentmod/models.py:7
+msgid "phone"
+msgstr "电话号码"
+
+#: commentmod/models.py:10
+msgid "comment"
+msgstr "评论"
+
+#: commentmod/models.py:11
+msgid "comments"
+msgstr "评论"
+
+#: commentmod/models.py:13
+msgid "CommentMod"
+msgstr "评论"
+
 #: templates/admin/add_symbol_confirmation.html:21
 #: templates/admin/change_selected_category_confirmation.html:8
+#: templates/admin/delete_symbol_confirmation.html:21
 msgid "Home"
 msgstr ""
 
@@ -373,15 +403,18 @@ msgid ""
 msgstr "为以下的 %(objects_name)s 选择你要添加的标记："
 
 #: templates/admin/add_symbol_confirmation.html:39
+#: templates/admin/delete_symbol_confirmation.html:39
 msgid "Symbol:"
 msgstr "标记："
 
 #: templates/admin/add_symbol_confirmation.html:45
+#: templates/admin/delete_symbol_confirmation.html:45
 msgid "Symbol"
 msgstr "标记"
 
 #: templates/admin/add_symbol_confirmation.html:52
 #: templates/admin/change_selected_category_confirmation.html:38
+#: templates/admin/delete_symbol_confirmation.html:52
 msgid "Yes, I'm sure"
 msgstr "是的，我确定"
 
@@ -399,6 +432,17 @@ msgstr "为以下的 %(objects_name)s 选择你要添加的栏目："
 #: templates/admin/change_selected_category_confirmation.html:26
 msgid "Categories:"
 msgstr "栏目："
+
+#: templates/admin/delete_symbol_confirmation.html:24
+msgid "Delete symbol(s) of multiple objects"
+msgstr "为多个项目删除标记"
+
+#: templates/admin/delete_symbol_confirmation.html:29
+#, python-format
+msgid ""
+"Please select symbol that you want all of the follow %(objects_name)s to "
+"delete:"
+msgstr "为以下的 %(objects_name)s 选择你要删除的标记："
 
 #: utils/dashboard.py:29
 msgid "Return to site"
