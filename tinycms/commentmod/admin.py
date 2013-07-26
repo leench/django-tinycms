@@ -24,7 +24,7 @@ class CommentModAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('user_name', 'user_email', 'is_public', 'comment', 'submit_date')
+            'fields': ('user_name', 'user_email', 'phone', 'is_public', 'comment', 'submit_date')
         }),
     )
 
