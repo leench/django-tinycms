@@ -11,7 +11,7 @@ class CommentMod(Comment):
         verbose_name_plural = _('comments')
 
 class Reply(models.Model):
-    comment     = models.ForeignKey(CommentMod, verbose_name=_('comment'))
+    comment     = models.OneToOneField(CommentMod, verbose_name=_('comment'))
     show_name   = models.CharField(_('show name'), max_length=255)
     reply       = models.TextField(_('reply'))
 
