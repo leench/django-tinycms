@@ -10,7 +10,7 @@ COMMENT_MAX_LENGTH = getattr(settings,'COMMENT_MAX_LENGTH',3000)
 class CommentFormMod(CommentForm):
     title       = forms.CharField(label=_('title'), max_length=300)
     name        = forms.CharField(label=_('callName'), max_length=50)
-    phone       = forms.CharField(label=_('phone'), max_length=64, blank=True)
+    phone       = forms.CharField(label=_('phone'), max_length=64, required=False)
 
     def __init__(self, *args, **kwargs):
         super(CommentFormMod, self).__init__(*args, **kwargs)
