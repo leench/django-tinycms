@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-01 09:26+0800\n"
+"POT-Creation-Date: 2013-08-01 09:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -380,7 +380,7 @@ msgstr "称呼"
 
 #: commentmod/forms.py:22 commentmod/forms.py:24
 msgid "Email address"
-msgstr ""
+msgstr "Email"
 
 #: commentmod/models.py:11 commentmod/models.py:15
 msgid "comment"
