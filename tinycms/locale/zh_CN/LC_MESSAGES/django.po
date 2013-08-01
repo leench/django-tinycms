@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-26 14:07+0800\n"
+"POT-Creation-Date: 2013-08-01 09:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,7 +188,7 @@ msgstr "作者"
 msgid "modified by"
 msgstr "修改者"
 
-#: models.py:83 models.py:173 models.py:182 commentmod/forms.py:11
+#: models.py:83 models.py:173 models.py:182 commentmod/forms.py:13
 #: commentmod/models.py:6
 msgid "title"
 msgstr "标题"
@@ -358,47 +358,55 @@ msgstr "上一页"
 msgid "next"
 msgstr "下一页"
 
-#: commentmod/admin.py:19
+#: commentmod/admin.py:21
+msgid "anonymous"
+msgstr "匿名"
+
+#: commentmod/admin.py:25
 msgid "public"
 msgstr "发布"
 
-#: commentmod/admin.py:23
+#: commentmod/admin.py:29
 msgid "unpublic"
 msgstr "未发布"
 
-#: commentmod/forms.py:12
-msgid "callName"
-msgstr "称呼"
-
-#: commentmod/forms.py:13 commentmod/models.py:7
+#: commentmod/forms.py:14 commentmod/models.py:7
 msgid "phone"
 msgstr "电话号码"
 
-#: commentmod/models.py:10 commentmod/models.py:14
+#: commentmod/forms.py:17 commentmod/forms.py:19
+msgid "callName"
+msgstr "称呼"
+
+#: commentmod/forms.py:22 commentmod/forms.py:24
+msgid "Email address"
+msgstr ""
+
+#: commentmod/models.py:11 commentmod/models.py:15
 msgid "comment"
 msgstr "评论"
 
-#: commentmod/models.py:11
+#: commentmod/models.py:12
 msgid "comments"
 msgstr "评论"
 
-#: commentmod/models.py:15
+#: commentmod/models.py:16
 msgid "show name"
 msgstr "显示称呼"
 
-#: commentmod/models.py:16
+#: commentmod/models.py:17
 msgid "reply"
 msgstr "回复"
 
-#: commentmod/models.py:19
+#: commentmod/models.py:20
 msgid "Reply"
 msgstr "回复"
 
-#: commentmod/models.py:20
+#: commentmod/models.py:21
 msgid "Replies"
 msgstr "回复"
 
-#: commentmod/models.py:22
+#: commentmod/models.py:23
 msgid "CommentMod"
 msgstr "评论"
 

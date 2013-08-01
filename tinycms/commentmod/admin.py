@@ -9,14 +9,20 @@ class ReplyAdmin(admin.TabularInline):
     extra = 1
 
 class CommentModAdmin(admin.ModelAdmin):
-    list_display = ('user_name', 'is_public', 'user_email', 'comment', 'submit_date')
+    list_display = ('get_user_name', 'is_public', 'user_email', 'comment', 'submit_date')
     ordering = ('-submit_date',)
     actions = ['public', 'unpublic']
     inlines = [ReplyAdmin, ]
 
-    def publick(modeladmin, request, queryset):
+    def get_user_name(self, obj):
+        if obj.user_name:
+            return obj.user_name
+        else:
+            return _('anonymous')
+
+    def public(modeladmin, request, queryset):
         queryset.update(is_public=True)
-    publick.short_description = _('public')
+    public.short_description = _('public')
 
     def unpublic(modeladmin, request, queryset):
         queryset.update(is_public=False)
