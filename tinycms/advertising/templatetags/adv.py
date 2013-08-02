@@ -30,3 +30,5 @@ def get_ad(name="", *args, **kwargs):
 
     if ad.image and ad.link:
         return '<a href="%s" title="%s" target="_blank"><img src="%s" title="%s" /></a>' % (ad.link, ad.title, ad.image.url, ad.title)
+
+    return ""
