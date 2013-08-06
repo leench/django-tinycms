@@ -29,6 +29,6 @@ def get_ad(name="", *args, **kwargs):
         return ad.code
 
     if ad.image and ad.link:
-        return '<a href="%s" title="%s" target="_blank"><img src="%s" title="%s" /></a>' % (ad.link, ad.title, ad.image.url, ad.title)
+        return '<a href="%s" title="%s" target="_blank"><img src="%s" title="%s" /></a>' % (ad.link, ad.adv_title, ad.image.url, ad.adv_title)
 
     return ""
