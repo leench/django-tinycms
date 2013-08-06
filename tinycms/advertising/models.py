@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class Advertising(models.Model):
     title       = models.CharField(_('title'), max_length=100)
+    adv_title   = models.CharField(_('advertising title'), max_length=100)
     identifier  = models.CharField(_('identifier'), max_length=100, unique=True, help_text=_('Allow only letters and numbers.'))
     image       = models.ImageField(_('image'), upload_to = 'images/ad/%Y/%m', blank=True)
     link        = models.URLField(_('link'), max_length=255, blank=True)
