@@ -7,7 +7,7 @@ class MediaAdmin(admin.TabularInline):
     extra = 2
 
 class AdvertisingAdmin(admin.ModelAdmin):
-    list_display = ('title', 'identifier', 'start_date', 'end_date', 'active')
+    list_display = ('title', 'adv_title', 'identifier', 'start_date', 'end_date', 'active')
     inlines = [MediaAdmin, ]
 
 admin.site.register(Advertising, AdvertisingAdmin)
