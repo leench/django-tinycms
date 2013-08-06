@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-02 15:20+0800\n"
+"POT-Creation-Date: 2013-08-06 14:50+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,7 +111,7 @@ msgstr "链接"
 msgid "An URL to use instead of the one derived from the category hierarchy."
 msgstr "栏目链接"
 
-#: models.py:18 models.py:187 advertising/models.py:14
+#: models.py:18 models.py:187 advertising/models.py:15
 msgid "active"
 msgstr "有效"
 
@@ -120,7 +120,7 @@ msgid "order"
 msgstr "排序"
 
 #: models.py:20 models.py:55 models.py:71 models.py:94
-#: advertising/models.py:10
+#: advertising/models.py:11
 msgid "description"
 msgstr "描述"
 
@@ -145,7 +145,7 @@ msgid ""
 "(Advanced) Any additional HTML to be placed verbatim in the &lt;head&gt;"
 msgstr "(高级) 在 &lt;head&gt; 中额外的 HTML"
 
-#: models.py:25 models.py:98 advertising/models.py:11
+#: models.py:25 models.py:98 advertising/models.py:12
 msgid "create date"
 msgstr "创建时间"
 
@@ -190,7 +190,7 @@ msgid "modified by"
 msgstr "修改者"
 
 #: models.py:83 models.py:173 models.py:182 advertising/models.py:5
-#: advertising/models.py:26 commentmod/forms.py:13 commentmod/models.py:6
+#: advertising/models.py:27 commentmod/forms.py:13 commentmod/models.py:6
 msgid "title"
 msgstr "标题"
 
@@ -307,7 +307,7 @@ msgstr "点击次数"
 msgid "uploader"
 msgstr "上传者"
 
-#: models.py:175 advertising/models.py:7 advertising/models.py:27
+#: models.py:175 advertising/models.py:8 advertising/models.py:28
 msgid "image"
 msgstr "图片"
 
@@ -315,7 +315,7 @@ msgstr "图片"
 msgid "upload date"
 msgstr "上传时间"
 
-#: models.py:183 models.py:197 advertising/models.py:8
+#: models.py:183 models.py:197 advertising/models.py:9
 msgid "link"
 msgstr "链接"
 
@@ -360,38 +360,42 @@ msgid "next"
 msgstr "下一页"
 
 #: advertising/models.py:6
+msgid "advertising title"
+msgstr "广告标题"
+
+#: advertising/models.py:7
 msgid "identifier"
 msgstr "辨识名"
 
-#: advertising/models.py:6
+#: advertising/models.py:7
 msgid "Allow only letters and numbers."
 msgstr "只允许英文字母和数字。"
 
-#: advertising/models.py:9
+#: advertising/models.py:10
 msgid "code"
 msgstr "代码"
 
-#: advertising/models.py:12
+#: advertising/models.py:13
 msgid "start date"
 msgstr "开始时间"
 
-#: advertising/models.py:13
+#: advertising/models.py:14
 msgid "end date"
 msgstr "结束时间"
 
-#: advertising/models.py:20 advertising/models.py:23
+#: advertising/models.py:21 advertising/models.py:24
 msgid "Advertising"
 msgstr "广告位"
 
-#: advertising/models.py:21
+#: advertising/models.py:22
 msgid "Advertisings"
 msgstr "广告位"
 
-#: advertising/models.py:28
+#: advertising/models.py:29
 msgid "advertising"
 msgstr "广告位"
 
-#: advertising/models.py:30
+#: advertising/models.py:31
 msgid "Media"
 msgstr "图片"
 
